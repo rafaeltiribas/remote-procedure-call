@@ -58,7 +58,8 @@ _Resposta:_
 No primeiro momento foi impresso no cliente a mensagem de erro "has no atribute 'get_question'". Isto ocorreu pois o método get_question não estava exposto no lado do servidor. Para isso foi necessário alterar o nome do método para 'exposed_get_question' para expor está parte do código remotamente!
 
 Após corrigir este erro, este foi o conteúdo impresso:
-Qual é a cor do cavalo branco de Napoleão?
+
+- Qual é a cor do cavalo branco de Napoleão?
 
 ---
 
