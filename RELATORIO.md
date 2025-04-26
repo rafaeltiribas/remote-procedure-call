@@ -81,14 +81,55 @@ O fluxo de comunicação entre cliente e servidor funcionou corretamente conform
 
 **Mostre o código do cliente e do servidor, incluindo a medição do tempo de execução.**
 
+Tempo de execução localmente:
+- Cliente: 3,348211 segundos
+- Servidor: 0,704899 segundos
+
 ```python
 # Código do cliente
-[Cole aqui o client.py]
+import rpyc
+import sys
+import time
+
+start = time.time()
+
+if len(sys.argv) < 2:
+    exit("Usage: python client.py SERVER_IP")
+
+server_ip = sys.argv[1]
+
+conn = rpyc.connect(server_ip, 18861)
+
+n = int(input("Digite o tamanho do vetor: "))
+vector = list(range(n))
+
+result = conn.root.sum_vector(vector)
+
+end = time.time()
+
+print(f"A soma dos elementos do vetor é: {result}")
+print(f"Tempo de execução no cliente: {end - start:.6f} segundos")
 ```
 
 ```python
 # Código do servidor
-[Cole aqui o server.py]
+import rpyc
+from rpyc.utils.server import ThreadedServer
+import time
+
+class MyService(rpyc.Service):
+    def exposed_sum_vector(self, vector):
+        start = time.time()
+        
+        result = sum(vector)
+        
+        end = time.time()
+        print(f"Tempo de execução no servidor: {end - start:.6f} segundos")
+        return result
+
+if __name__ == "__main__":
+    server = ThreadedServer(MyService, port=18861, hostname="0.0.0.0")
+    server.start()
 ```
 
 ---
