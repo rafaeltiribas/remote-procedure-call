@@ -45,8 +45,9 @@ _Resposta:_
 No primeiro momento foi impresso no cliente a mensagem de erro pois a os métodos estavam sendo chamados pelo objeto errado, chamando através de c.root ao invés de conn.root. Após consertar este pequeno detalhe este foi o conteúdo impresso:
 
 Após corrigir este erro, este foi o conteúdo impresso:
-[imagem]
-
+<__main__.MyService object at 0x000002325C33AF90>
+42
+43
 ---
 
 ## Questão 2
@@ -57,7 +58,7 @@ _Resposta:_
 No primeiro momento foi impresso no cliente a mensagem de erro "has no atribute 'get_question'". Isto ocorreu pois o método get_question não estava exposto no lado do servidor. Para isso foi necessário alterar o nome do método para 'exposed_get_question' para expor está parte do código remotamente!
 
 Após corrigir este erro, este foi o conteúdo impresso:
-[imagem]
+Qual é a cor do cavalo branco de Napoleão?
 ---
 
 ## Questão 3
