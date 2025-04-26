@@ -246,7 +246,7 @@ Existe uma diferença significativa nos tempos de execução entre a execução 
 
 **Tabela: Tempo de execução na mesma máquina para n = {100, 1000, 10000}**
 
-| n    | Tempo Cliente (s) | Tempo Servidor (s) |
+| n    | Tempo Servidor | Tempo Cliente |
 |------|-------------------|-------------------|
 | 100  | 0.007578          | 1.314485       |
 | 1000 | 0.071109      | 2.956589       |
@@ -263,7 +263,7 @@ _Resposta:_
 
 **Tabela: Tempo de execução em máquinas diferentes para n = {100, 1000, 10000}**
 
-| n    | Tempo Cliente (s) | Tempo Servidor (s) |
+| n    | Tempo Servidor | Tempo Cliente |
 |------|-------------------|-------------------|
 | 100  | 0.747229          | 2.810256         |
 | 1000 | 6.827894            | 9.721219         |
@@ -283,7 +283,7 @@ O tempo de execução cresce de maneira exponencial comparado à execução loca
 _Resposta:_  
 Existem diferenças claras entre a execução local e a execução remota.
 
-| Execução   | Tempo Cliente (n=10000) | Tempo Servidor (n=10000) |
+| Execução   | Tempo Servidor (n=10000) | Tempo Cliente (n=10000) |
 |------------|-------------------------|--------------------------|
 | **Local**  | 0,71 s                   | 3,41 s                   |
 | **Remoto** | 67,82 s                  | 70,57 s                  |
