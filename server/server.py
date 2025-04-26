@@ -14,12 +14,12 @@ class MyService(rpyc.Service):
   def exposed_get_answer(self): # este é um método exposto
     return 42
   
-  def get_question(self): # este método não é exposto
+  def exposed_get_question(self): # este método não é exposto
     return "Qual é a cor do cavalo branco de Napoleão?"
   
 #Para iniciar o servidor
 if __name__ == "__main__":
   from rpyc.utils.server import ThreadedServer
-  t = ThreadedServer(MyService, port=18861)
+  t = ThreadedServer(MyService, port=18861, hostname="0.0.0.0")
   print("Server starting...")
   t.start()

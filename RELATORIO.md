@@ -29,7 +29,10 @@
 **Explique o que foi impresso no cliente (máquinas diferentes).**
 
 _Resposta:_  
-[Sua resposta aqui]
+No primeiro momento foi impresso no cliente a mensagem de erro pois a os métodos estavam sendo chamados pelo objeto errado, chamando através de c.root ao invés de conn.root. Após consertar este pequeno detalhe este foi o conteúdo impresso:
+
+Após corrigir este erro, este foi o conteúdo impresso:
+[imagem]
 
 ---
 
@@ -38,8 +41,10 @@ _Resposta:_
 **Explique o que foi impresso no cliente ao executar o código modificado na mesma máquina.**
 
 _Resposta:_  
-[Sua resposta aqui]
+No primeiro momento foi impresso no cliente a mensagem de erro "has no atribute 'get_question'". Isto ocorreu pois o método get_question não estava exposto no lado do servidor. Para isso foi necessário alterar o nome do método para 'exposed_get_question' para expor está parte do código remotamente!
 
+Após corrigir este erro, este foi o conteúdo impresso:
+[imagem]
 ---
 
 ## Questão 3
@@ -47,7 +52,28 @@ _Resposta:_
 **Explique o que ocorreu ao implementar o programa que soma o vetor.**
 
 _Resposta:_  
-[Sua resposta aqui]
+No programa desenvolvido, o cliente solicita ao usuário que informe o tamanho do vetor (`n`).  
+Em seguida, é criado um vetor contendo `n` elementos, variando de `0` até `n-1`.  
+Ou seja, se o usuário informou o valor `n = 4`, o vetor criado foi `[0, 1, 2, 3]`.
+
+Este vetor é então enviado para o servidor utilizando o RPyC (Remote Python Call).  
+No servidor, o procedimento remoto `sum_vector` recebe o vetor e calcula a soma dos seus elementos utilizando a função `sum()` do Python.
+
+A operação realizada foi:
+
+```
+0 + 1 + 2 + 3 = 6
+```
+
+Assim, o servidor retorna o valor `6` para o cliente, que imprime o resultado na tela.
+
+Portanto, o que ocorreu foi:
+- O cliente criou o vetor `[0, 1, 2, 3]`.
+- O cliente enviou este vetor para o servidor.
+- O servidor somou os valores do vetor, obtendo `6`.
+- O cliente recebeu e exibiu o resultado da soma.
+
+O fluxo de comunicação entre cliente e servidor funcionou corretamente conforme o esperado.
 
 ---
 
