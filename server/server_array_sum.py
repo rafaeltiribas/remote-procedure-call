@@ -3,6 +3,12 @@ from rpyc.utils.server import ThreadedServer
 import time
 
 class MyService(rpyc.Service):
+    def on_connect(self, conn):
+        # Remove o timeout da conexão
+        conn._config.update({
+            "sync_request_timeout": None
+        })
+
     def exposed_sum_vector(self, vector):
         start = time.time()
         

@@ -9,7 +9,12 @@ if len(sys.argv) < 2:
 
 server_ip = sys.argv[1]
 
-conn = rpyc.connect(server_ip, 18861)
+# Conexão sem timeout
+conn = rpyc.connect(
+    server_ip,
+    18861,
+    config={"sync_request_timeout": None}
+)
 
 n = int(input("Digite o tamanho do vetor: "))
 vector = list(range(n))
