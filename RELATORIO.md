@@ -44,10 +44,10 @@ Durante a execução em máquinas diferentes, o código gerava um erro de timeou
 _Resposta:_  
 No primeiro momento foi impresso no cliente a mensagem de erro pois a os métodos estavam sendo chamados pelo objeto errado, chamando através de c.root ao invés de conn.root. Após consertar este pequeno detalhe este foi o conteúdo impresso:
 
-Após corrigir este erro, este foi o conteúdo impresso:
-<__main__.MyService object at 0x000002325C33AF90>
-42
-43
+- <__main__.MyService object at 0x000002325C33AF90>
+- 42
+- 43
+
 ---
 
 ## Questão 2
