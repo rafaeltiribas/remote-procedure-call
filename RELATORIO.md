@@ -59,6 +59,7 @@ No primeiro momento foi impresso no cliente a mensagem de erro "has no atribute 
 
 Após corrigir este erro, este foi o conteúdo impresso:
 Qual é a cor do cavalo branco de Napoleão?
+
 ---
 
 ## Questão 3
